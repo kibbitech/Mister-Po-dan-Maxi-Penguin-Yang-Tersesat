@@ -1,0 +1,77 @@
+/* Gaya dasar */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animasi background */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container login */
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 350px;
+}
+
+/* Judul */
+h1 {
+    font-size: 24px;
+    color: black; /* Fallback for unsupported browsers */
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Input field */
+input {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Tombol */
+button {
+    width: 85%;
+    padding: 12px;
+    background: linear-gradient(90deg, red, yellow, green);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #f8f8f8; /* Improved contrast */
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, green, yellow, red);
+}
+
+/* Pesan error */
+#message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 20px;
+}
