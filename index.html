@@ -3,27 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login ke Game</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function checkPassword() {
-            var password = document.getElementById("password").value;
-            if (password === "Rahasia123") {  // Ganti dengan password yang kamu inginkan
-                localStorage.setItem("auth", "true");
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(function() {
                 window.location.href = "game.html";
-            } else {
-                document.getElementById("message").innerText = "❌ Password salah! Coba lagi.";
-            }
-        }
+            }, 5000); // Redirect after 5 seconds
+        });
     </script>
 </head>
 <body>
-    <div class="login-container">
-        <h1>🌈 Mister Po dan Maxi, Penguin Yang Tersesat 🎮</h1>
-        <p>Masukkan password untuk bermain</p>
-        <input type="password" id="password" placeholder="🔑 Masukkan password">
-        <button onclick="checkPassword()">🚀 Masuk</button>
-        <p id="message"></p>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <div class="arabic-calligraphy">
+            بسم الله الرحمن الرحيم
+        </div>
+        <div class="message">
+            🌟 Selamat Datang! Bersiap untuk petualangan... 🎮
+        </div>
+        <div class="animation-container">
+            <div class="crescent"></div>
+            <div class="ball"></div>
+        </div>
     </div>
+    <div class="rain-container"></div>
+
+    <script>
+        function createRain() {
+            const rainContainer = document.querySelector(".rain-container");
+            for (let i = 0; i < 50; i++) {
+                let drop = document.createElement("div");
+                drop.classList.add("rain");
+                drop.style.left = `${Math.random() * 100}vw`;
+                drop.style.animationDuration = `${Math.random() * 2 + 1}s`;
+                drop.style.animationDelay = `${Math.random()}s`;
+                rainContainer.appendChild(drop);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", createRain);
+    </script>
 </body>
 </html>
